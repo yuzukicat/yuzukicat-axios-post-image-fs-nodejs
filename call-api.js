@@ -5,7 +5,7 @@ const https = require('https');
 const FormData = require("form-data");
 const fs = require('fs');
 const axios = require('axios');
-const fileName = './test.jpeg';
+const fileName = './writeityoursef';
 const formData = new FormData();
 //Solve the issue: AxiosError: unable to verify the first certificate (UNABLE_TO_VERIFY_LEAF_SIGNATURE)
 const httpsAgent = new https.Agent({ rejectUnauthorized: false });
@@ -24,7 +24,7 @@ fs.readFile(fileName, (err, buffer) => {
       console.log(formData);
       axios({
         method: 'post',
-        url: 'https://rateplating.online:8401/predict',
+        url: 'https://api.writeityoursef',
         data: formData,
         httpsAgent: httpsAgent
       })
